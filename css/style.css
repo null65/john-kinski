@@ -140,12 +140,97 @@ nav a.active {
 }
 
 .hero {
-	padding: 5rem 0 5.5rem;
-	background:
-		radial-gradient(ellipse 70% 60% at 80% 10%, rgba(30, 58, 95, 0.07), transparent),
-		radial-gradient(ellipse 50% 40% at 10% 90%, rgba(192, 77, 53, 0.05), transparent),
-		var(--bg-warm);
+	padding: 4rem 0 5.5rem;
+	background: var(--bg-warm);
 	overflow: hidden;
+}
+
+.site-banner {
+	position: relative;
+	width: 100%;
+	height: min(42vw, 320px);
+	min-height: 200px;
+	overflow: hidden;
+}
+
+.site-banner img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 60%;
+}
+
+.site-banner-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(250, 248, 245, 0.05) 0%,
+		rgba(20, 20, 20, 0.35) 100%
+	);
+}
+
+.site-banner-caption {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: flex-end;
+	padding-bottom: 2rem;
+}
+
+.site-banner-caption p {
+	font-family: var(--font-display);
+	font-size: clamp(1.25rem, 3vw, 1.75rem);
+	font-weight: 600;
+	color: var(--white);
+	text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+	letter-spacing: -0.02em;
+}
+
+.page-banner {
+	position: relative;
+	padding: 5rem 0 4rem;
+	overflow: hidden;
+}
+
+.page-banner-bg {
+	position: absolute;
+	inset: 0;
+}
+
+.page-banner-bg img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 60%;
+}
+
+.page-banner-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to right,
+		rgba(20, 20, 20, 0.72) 0%,
+		rgba(20, 20, 20, 0.45) 100%
+	);
+}
+
+.page-banner .wrap {
+	position: relative;
+	z-index: 1;
+}
+
+.page-banner .section-label {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.page-banner h1,
+.page-banner p {
+	color: var(--white);
+}
+
+.page-banner p {
+	opacity: 0.9;
 }
 
 .hero-layout {
