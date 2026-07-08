@@ -1008,7 +1008,7 @@ section.alt {
 
 footer {
 	border-top: 1px solid var(--border);
-	padding: 2.5rem 0 0;
+	padding: 2.5rem 0 2rem;
 	background: var(--bg-warm);
 }
 
@@ -1018,26 +1018,50 @@ footer {
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 1rem;
-	padding-bottom: 2.5rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--border);
 }
 
-.site-credit {
-	text-align: center;
+.footer-credit {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-credit a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 	font-size: 0.8125rem;
-	color: var(--soft);
-	padding: 1.25rem 0;
-	border-top: 1px solid var(--border);
+	color: var(--muted);
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	border: 1px solid var(--border);
 	background: var(--white);
+	transition: color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
-.site-credit a {
-	color: var(--accent);
+.footer-credit a:hover {
+	color: var(--text);
+	border-color: #ccc;
+	box-shadow: var(--shadow-sm);
+	transform: translateY(-1px);
+}
+
+.footer-credit svg {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	opacity: 0.7;
+}
+
+.footer-credit a:hover svg {
+	opacity: 1;
+}
+
+.footer-credit strong {
 	font-weight: 500;
-	transition: color 0.2s;
-}
-
-.site-credit a:hover {
-	color: var(--accent-light);
+	color: var(--text);
 }
 
 footer .logo {
