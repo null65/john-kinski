@@ -145,46 +145,85 @@ nav a.active {
 	overflow: hidden;
 }
 
-.site-banner {
+.hero-banner {
 	position: relative;
-	width: 100%;
-	height: min(42vw, 320px);
-	min-height: 200px;
+	min-height: 560px;
+	display: flex;
+	align-items: center;
+	padding: 4rem 0 5rem;
 	overflow: hidden;
 }
 
-.site-banner img {
+.hero-banner-bg {
+	position: absolute;
+	inset: 0;
+}
+
+.hero-banner-bg img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center 60%;
+	object-position: center 55%;
 }
 
-.site-banner-overlay {
+.hero-banner-overlay {
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(
-		to bottom,
-		rgba(250, 248, 245, 0.05) 0%,
-		rgba(20, 20, 20, 0.35) 100%
+		to right,
+		rgba(14, 14, 14, 0.82) 0%,
+		rgba(14, 14, 14, 0.55) 55%,
+		rgba(14, 14, 14, 0.35) 100%
 	);
 }
 
-.site-banner-caption {
-	position: absolute;
-	inset: 0;
-	display: flex;
-	align-items: flex-end;
-	padding-bottom: 2rem;
+.hero-banner-content {
+	position: relative;
+	z-index: 1;
+	width: 100%;
 }
 
-.site-banner-caption p {
-	font-family: var(--font-display);
-	font-size: clamp(1.25rem, 3vw, 1.75rem);
+.hero-banner .hero-eyebrow {
+	font-size: 0.75rem;
 	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	color: rgba(255, 255, 255, 0.75);
+	margin-bottom: 0.75rem;
+}
+
+.hero-banner .hero-text h1 {
 	color: var(--white);
-	text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
-	letter-spacing: -0.02em;
+}
+
+.hero-banner .hero-text .lead {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-banner .hero-stats {
+	border-top-color: rgba(255, 255, 255, 0.2);
+	border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-banner .hero-stat strong {
+	color: var(--white);
+}
+
+.hero-banner .hero-stat span {
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.btn-light {
+	background: rgba(255, 255, 255, 0.12);
+	color: var(--white);
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	backdrop-filter: blur(4px);
+}
+
+.btn-light:hover {
+	background: rgba(255, 255, 255, 0.22);
+	border-color: var(--white);
+	color: var(--white);
 }
 
 .page-banner {
