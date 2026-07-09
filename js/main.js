@@ -4,6 +4,17 @@ document.querySelector('.menu-btn')?.addEventListener('click', function () {
 	this.setAttribute('aria-expanded', open);
 });
 
+document.querySelectorAll('#nav a').forEach((link) => {
+	link.addEventListener('click', () => {
+		const nav = document.getElementById('nav');
+		const btn = document.querySelector('.menu-btn');
+		if (nav?.classList.contains('open')) {
+			nav.classList.remove('open');
+			btn?.setAttribute('aria-expanded', 'false');
+		}
+	});
+});
+
 const portrait = document.getElementById('portrait');
 const fallback = document.getElementById('portrait-fallback');
 if (portrait && fallback) {
