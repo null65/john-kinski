@@ -205,6 +205,35 @@ nav a.active {
 	color: #ccc;
 }
 
+.hero-text .lead + .lead {
+	margin-top: -1.25rem;
+}
+
+.home-intro {
+	padding: 3rem 0 3.5rem;
+}
+
+.home-intro p {
+	font-size: 1.0625rem;
+	color: var(--muted);
+	line-height: 1.75;
+	margin-bottom: 1.25rem;
+}
+
+.home-intro p:last-child {
+	margin-bottom: 0;
+}
+
+.home-intro a {
+	color: var(--accent);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.home-intro a:hover {
+	opacity: 0.8;
+}
+
 .hero-text h1 {
 	font-family: var(--font-display);
 	font-size: clamp(2.5rem, 5vw, 3.75rem);
