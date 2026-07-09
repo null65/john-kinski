@@ -976,6 +976,46 @@ section.alt {
 	height: 14px;
 }
 
+.press-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem;
+}
+
+.press-block {
+	background: var(--white);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 2rem;
+}
+
+.press-block h3 {
+	font-family: var(--font-display);
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.press-copy {
+	font-size: 0.9375rem;
+	color: var(--muted);
+	line-height: 1.7;
+	margin-bottom: 1.5rem;
+}
+
+.press-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.25rem;
+}
+
+.press-links {
+	max-width: 640px;
+	margin: 1.5rem auto 0;
+	text-align: left;
+}
+
 .contact-block {
 	background: var(--white);
 	border: 1px solid var(--border);
@@ -1129,6 +1169,10 @@ section.alt {
 
 .contact-email-card .btn {
 	justify-content: center;
+}
+
+.contact-email-card + .contact-email-card {
+	margin-top: 1.5rem;
 }
 
 .cta-band {
@@ -1321,6 +1365,10 @@ footer p {
 	}
 
 	.connect-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.press-grid {
 		grid-template-columns: 1fr;
 	}
 }
