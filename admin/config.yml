@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: null65/john-kinski
+  branch: main
+  auth_methods:
+    - token
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://johnkinski.com
+display_url: https://johnkinski.com
+
+editor:
+  preview: false
+
+collections:
+  - name: "homepage_updates"
+    label: "Website Text & Quicklinks"
+    type: "file"
+    files:
+      - file: "data/homepage.yml"
+        name: "homepage_content"
+        label: "Live Banner Update"
+        format: "yaml"
+        fields:
+          - { label: "Announcement Text", name: "announcement_text", widget: "string", required: true, description: "Type the headline sentence here." }
+          - { label: "Button Text", name: "button_label", widget: "string", required: true, description: "e.g., 'Buy on Amazon' or 'Read Chapter One'" }
+          - { label: "Destination URL Link", name: "destination_url", widget: "string", required: true, description: "Paste the full website address here. Must start with https://" }
