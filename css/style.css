@@ -174,35 +174,13 @@ nav a.active {
 	width: 100%;
 	aspect-ratio: 3 / 4;
 	object-fit: cover;
+	object-position: center 20%;
 	border-radius: var(--radius);
 	background: var(--bg);
 	box-shadow: var(--shadow-lg);
-	display: none;
-	position: relative;
-	z-index: 1;
-}
-
-.portrait.loaded {
 	display: block;
-}
-
-.portrait-fallback {
-	width: 100%;
-	aspect-ratio: 3 / 4;
-	border-radius: var(--radius);
-	background: var(--bg);
-	box-shadow: var(--shadow-lg);
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: relative;
 	z-index: 1;
-}
-
-.portrait-fallback svg {
-	width: 52px;
-	height: 52px;
-	color: #ccc;
 }
 
 .hero-text .lead + .lead {
@@ -511,8 +489,11 @@ section.alt {
 .featured-spotlight-cover img {
 	border-radius: var(--radius-sm);
 	box-shadow: var(--shadow-md);
-	max-width: 240px;
+	max-width: 320px;
+	width: 100%;
+	height: auto;
 	margin: 0 auto;
+	display: block;
 }
 
 .featured-badge {

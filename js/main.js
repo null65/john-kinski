@@ -15,21 +15,7 @@ document.querySelectorAll('#nav a').forEach((link) => {
 	});
 });
 
-const portrait = document.getElementById('portrait');
-const fallback = document.getElementById('portrait-fallback');
-if (portrait && fallback) {
-	portrait.addEventListener('load', () => {
-		portrait.classList.add('loaded');
-		fallback.hidden = true;
-	});
-	portrait.addEventListener('error', () => {
-		fallback.hidden = false;
-	});
-	if (portrait.complete && portrait.naturalWidth > 0) {
-		portrait.classList.add('loaded');
-		fallback.hidden = true;
-	}
-}
+});
 
 const header = document.querySelector('header');
 if (header) {
