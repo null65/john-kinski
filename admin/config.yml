@@ -3,6 +3,7 @@ backend:
   repo: null65/john-kinski
   branch: main
   auth_methods:
+    - oauth
     - token
 
 media_folder: "assets/uploads"
