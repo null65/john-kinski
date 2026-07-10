@@ -6,26 +6,46 @@ backend:
   auth_methods:
     - oauth
     - token
-
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+  commit_messages:
+    update: Update homepage banner
+    create: Update homepage banner
+    delete: Update homepage banner
 
 site_url: https://johnkinski.com
 display_url: https://johnkinski.com
+logout_redirect_url: https://johnkinski.com
+
+app_title: John Kinski — Website Manager
+
+logo:
+  src: /images/apple-touch-icon.png
+  show_in_header: true
 
 editor:
   preview: false
 
-collections:
-  - name: "homepage_updates"
-    label: "Website Text & Quicklinks"
-    type: "file"
-    files:
-      - file: "data/homepage.yml"
-        name: "homepage_content"
-        label: "Live Banner Update"
-        format: "yaml"
-        fields:
-          - { label: "Announcement Text", name: "announcement_text", widget: "string", required: true, description: "Type the headline sentence here." }
-          - { label: "Button Text", name: "button_label", widget: "string", required: true, description: "e.g., 'Buy on Amazon' or 'Read Chapter One'" }
-          - { label: "Destination URL Link", name: "destination_url", widget: "string", required: true, description: "Paste the full website address here. Must start with https://" }
+singletons:
+  - name: homepage_banner
+    label: Homepage Banner
+    icon: campaign
+    file: data/homepage.yml
+    format: yaml
+    fields:
+      - label: Headline
+        name: announcement_text
+        widget: string
+        required: true
+        hint: "The main message on the blue banner at the bottom of your homepage. Example — Theatrecy — out now"
+      - label: Button text
+        name: button_label
+        widget: string
+        required: true
+        hint: "What visitors read on the button. Example — Buy on Amazon"
+      - label: Link address
+        name: destination_url
+        widget: string
+        required: true
+        hint: "Where the button takes people. Paste the full web address."
+        pattern:
+          - "^https?://"
+          - "Must start with https:// — e.g. https://troubador.co.uk/bookshop/historical/theatrecy"
