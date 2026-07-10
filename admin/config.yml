@@ -15,6 +15,9 @@ site_url: https://johnkinski.com
 display_url: https://johnkinski.com
 logout_redirect_url: https://johnkinski.com
 
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
 app_title: John Kinski — Website Manager
 
 logo:
