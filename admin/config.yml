@@ -2,6 +2,7 @@ backend:
   name: github
   repo: null65/john-kinski
   branch: main
+  base_url: https://sveltia-cms-auth.jack-77f.workers.dev
   auth_methods:
     - oauth
     - token
