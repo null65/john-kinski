@@ -15,8 +15,6 @@ document.querySelectorAll('#nav a').forEach((link) => {
 	});
 });
 
-});
-
 const header = document.querySelector('header');
 if (header) {
 	window.addEventListener('scroll', () => {
