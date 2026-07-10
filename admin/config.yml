@@ -7,9 +7,9 @@ backend:
     - oauth
     - token
   commit_messages:
-    update: Update homepage banner
-    create: Update homepage banner
-    delete: Update homepage banner
+    update: Update website content
+    create: Update website content
+    delete: Update website content
 
 site_url: https://johnkinski.com
 display_url: https://johnkinski.com
@@ -28,8 +28,127 @@ editor:
   preview: false
 
 singletons:
+  - name: site_announcement
+    label: Top Announcement Bar
+    icon: notifications
+    file: data/announcement.yml
+    format: yaml
+    fields:
+      - label: Show announcement bar
+        name: show
+        widget: boolean
+        default: false
+        hint: "Turn on to show a message strip at the very top of every page."
+      - label: Message
+        name: message
+        widget: string
+        required: true
+        hint: "Short announcement. Example — Theatrecy is out now"
+      - label: Link address (optional)
+        name: link_url
+        widget: string
+        required: false
+        hint: "If you add a link, the whole bar becomes clickable."
+
+  - name: homepage_hero
+    label: Homepage Hero
+    icon: person
+    file: data/hero.yml
+    format: yaml
+    fields:
+      - label: Main headline
+        name: title
+        widget: string
+        required: true
+      - label: Opening line
+        name: lead_1
+        widget: text
+        required: true
+      - label: Second line
+        name: lead_2
+        widget: text
+        required: true
+      - label: Stat 1 — number
+        name: stat_1_value
+        widget: string
+      - label: Stat 1 — label
+        name: stat_1_label
+        widget: string
+      - label: Stat 2 — number
+        name: stat_2_value
+        widget: string
+      - label: Stat 2 — label
+        name: stat_2_label
+        widget: string
+      - label: Stat 3 — number
+        name: stat_3_value
+        widget: string
+      - label: Stat 3 — label
+        name: stat_3_label
+        widget: string
+      - label: Primary button text
+        name: btn_primary_label
+        widget: string
+      - label: Primary button link
+        name: btn_primary_url
+        widget: string
+        hint: "Page on your site (theatrecy.html) or full https:// link"
+      - label: Secondary button text
+        name: btn_secondary_label
+        widget: string
+      - label: Secondary button link
+        name: btn_secondary_url
+        widget: string
+
+  - name: homepage_intro
+    label: Homepage Introduction
+    icon: article
+    file: data/intro.yml
+    format: yaml
+    fields:
+      - label: First paragraph
+        name: paragraph_1
+        widget: text
+        required: true
+      - label: Second paragraph
+        name: paragraph_2
+        widget: text
+        required: true
+
+  - name: featured_book
+    label: Featured Book Spotlight
+    icon: auto_stories
+    file: data/featured.yml
+    format: yaml
+    fields:
+      - label: Badge text
+        name: badge
+        widget: string
+        hint: "Small label above the title. Example — Latest release · June 2026"
+      - label: Book title
+        name: title
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: text
+        required: true
+      - label: Primary button text
+        name: btn_primary_label
+        widget: string
+      - label: Primary button link
+        name: btn_primary_url
+        widget: string
+      - label: Secondary button text
+        name: btn_secondary_label
+        widget: string
+      - label: Buy / external link
+        name: btn_secondary_url
+        widget: string
+        hint: "Usually an Amazon or Troubador link"
+
   - name: homepage_banner
-    label: Homepage Banner
+    label: Bottom Banner & Button
     icon: campaign
     file: data/homepage.yml
     format: yaml
@@ -38,17 +157,76 @@ singletons:
         name: announcement_text
         widget: string
         required: true
-        hint: "The main message on the blue banner at the bottom of your homepage. Example — Theatrecy — out now"
+        hint: "The blue banner at the bottom of the homepage"
       - label: Button text
         name: button_label
         widget: string
         required: true
-        hint: "What visitors read on the button. Example — Buy on Amazon"
       - label: Link address
         name: destination_url
         widget: string
         required: true
-        hint: "Where the button takes people. Paste the full web address."
         pattern:
           - "^https?://"
-          - "Must start with https:// — e.g. https://troubador.co.uk/bookshop/historical/theatrecy"
+          - "Must start with https://"
+
+  - divider: true
+
+  - name: news_updates
+    label: News & Updates
+    icon: newspaper
+    file: data/news.json
+    format: json
+    fields:
+      - label: News items
+        name: items
+        widget: list
+        summary: "{{fields.title}}"
+        hint: "Add news about new books, events, or reviews. Newest first works best."
+        fields:
+          - label: Date
+            name: date
+            widget: datetime
+            date_format: YYYY-MM-DD
+            time_format: false
+          - label: Headline
+            name: title
+            widget: string
+            required: true
+          - label: Summary
+            name: summary
+            widget: text
+            required: true
+          - label: Read more link (optional)
+            name: url
+            widget: string
+            required: false
+
+  - divider: true
+
+  - name: contact_page
+    label: Contact Page
+    icon: mail
+    file: data/contact.yml
+    format: yaml
+    fields:
+      - label: Page title
+        name: page_title
+        widget: string
+        required: true
+      - label: Page subtitle
+        name: page_subtitle
+        widget: text
+        required: true
+      - label: Email section heading
+        name: email_heading
+        widget: string
+      - label: Email section text
+        name: email_intro
+        widget: text
+      - label: Press section heading
+        name: press_heading
+        widget: string
+      - label: Press section text
+        name: press_intro
+        widget: text

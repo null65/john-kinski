@@ -27,7 +27,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="stylesheet" href="css/style.css?v=2">
+	<link rel="stylesheet" href="css/style.css?v=3">
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -66,21 +66,21 @@
 		<div class="page-hero">
 			<div class="wrap">
 				<p class="section-label reveal">Connect</p>
-				<h1 class="reveal">Find John's books</h1>
-				<p class="reveal reveal-delay-1">Purchase links, publisher information, and ways to follow his work.</p>
+				<h1 class="reveal" id="contact-page-title">Find John's books</h1>
+				<p class="reveal reveal-delay-1" id="contact-page-subtitle">Purchase links, publisher information, and ways to follow his work.</p>
 			</div>
 		</div>
 
 		<section>
 			<div class="wrap">
 				<div class="contact-email-card reveal">
-					<h3>Email John</h3>
-					<p>For enquiries about John's books, events, or media requests.</p>
+					<h3 id="contact-email-heading">Email John</h3>
+					<p id="contact-email-intro">For enquiries about John's books, events, or media requests.</p>
 					<a href="mailto:hello@johnkinski.com" class="btn btn-primary">hello@johnkinski.com</a>
 				</div>
 				<div class="contact-email-card reveal reveal-delay-1">
-					<h3>Press &amp; media</h3>
-					<p>Bio, book details, cover images, and download links for journalists and reviewers.</p>
+					<h3 id="contact-press-heading">Press &amp; media</h3>
+					<p id="contact-press-intro">Bio, book details, cover images, and download links for journalists and reviewers.</p>
 					<a href="press-kit.html" class="btn btn-secondary">View press kit</a>
 				</div>
 			</div>
@@ -178,5 +178,6 @@
 	</footer>
 
 	<script src="js/main.js"></script>
+	<script src="js/site-content.js"></script>
 </body>
 </html>

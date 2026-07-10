@@ -27,7 +27,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="stylesheet" href="css/style.css?v=2">
+	<link rel="stylesheet" href="css/style.css?v=3">
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -66,6 +66,12 @@
 	</script>
 </head>
 <body>
+	<div id="site-announcement" class="site-announcement" hidden>
+		<div class="wrap site-announcement-inner">
+			<p id="site-announcement-text"></p>
+			<a id="site-announcement-link" class="site-announcement-link" hidden aria-label="Announcement link"></a>
+		</div>
+	</div>
 	<header>
 		<div class="wrap">
 			<a href="index.html" class="logo">John Kinski</a>
@@ -92,17 +98,17 @@
 						<img src="images/john-kinski-portrait.jpg" alt="John Kinski, author" class="portrait" width="300" height="400">
 					</div>
 					<div class="hero-text">
-						<h1 class="reveal">John Kinski — Novelist &amp; Historian</h1>
-						<p class="lead reveal reveal-delay-1">Historian, novelist, and storyteller. From the riot-torn streets of modern London to the closed playhouses of the English Civil War.</p>
-						<p class="lead reveal reveal-delay-1">Author of <em>Theatrecy</em> and <em>Tottenham Boys</em>, with the Regency suspense novel <em>Halfpenny</em> nearing completion.</p>
+						<h1 class="reveal" id="hero-title">John Kinski — Novelist &amp; Historian</h1>
+						<p class="lead reveal reveal-delay-1" id="hero-lead-1">Historian, novelist, and storyteller. From the riot-torn streets of modern London to the closed playhouses of the English Civil War.</p>
+						<p class="lead reveal reveal-delay-1" id="hero-lead-2">Author of <em>Theatrecy</em> and <em>Tottenham Boys</em>, with the Regency suspense novel <em>Halfpenny</em> nearing completion.</p>
 						<div class="hero-stats reveal reveal-delay-2">
-							<div class="hero-stat"><strong>2</strong><span>Published novels</span></div>
-							<div class="hero-stat"><strong>LSE</strong><span>BA &amp; MPhil, History</span></div>
-							<div class="hero-stat"><strong>2026</strong><span>Latest: <em>Theatrecy</em></span></div>
+							<div class="hero-stat"><strong id="hero-stat-1-value">2</strong><span id="hero-stat-1-label">Published novels</span></div>
+							<div class="hero-stat"><strong id="hero-stat-2-value">LSE</strong><span id="hero-stat-2-label">BA &amp; MPhil, History</span></div>
+							<div class="hero-stat"><strong id="hero-stat-3-value">2026</strong><span id="hero-stat-3-label">Latest: <em>Theatrecy</em></span></div>
 						</div>
 						<div class="hero-actions reveal reveal-delay-3">
-							<a href="theatrecy.html" class="btn btn-primary">Explore <em>Theatrecy</em></a>
-							<a href="books.html" class="btn btn-secondary">All books</a>
+							<a href="theatrecy.html" class="btn btn-primary" id="hero-btn-primary">Explore <em>Theatrecy</em></a>
+							<a href="books.html" class="btn btn-secondary" id="hero-btn-secondary">All books</a>
 						</div>
 					</div>
 				</div>
@@ -111,9 +117,19 @@
 
 		<section class="home-intro">
 			<div class="wrap-narrow">
-				<p class="reveal">John Kinski is a British novelist with a BA and MPhil in History from the London School of Economics. His fiction moves between seventeenth-century England and contemporary London — from the closed playhouses of the Civil War to the riot-torn streets of Tottenham — with an eye for character, political upheaval, and dark humour.</p>
-				<p class="reveal reveal-delay-1"><em>Theatrecy</em>, published by Troubador in June 2026, is a black comedy about one man's mission to restore the Globe Theatre. <em>Tottenham Boys</em> is a suspense thriller set during the 2011 London riots, endorsed by Hanif Kureishi. <em>Halfpenny</em>, a Regency suspense novel, is nearing completion.</p>
+				<p class="reveal" id="intro-p1">John Kinski is a British novelist with a BA and MPhil in History from the London School of Economics. His fiction moves between seventeenth-century England and contemporary London — from the closed playhouses of the Civil War to the riot-torn streets of Tottenham — with an eye for character, political upheaval, and dark humour.</p>
+				<p class="reveal reveal-delay-1" id="intro-p2"><em>Theatrecy</em>, published by Troubador in June 2026, is a black comedy about one man's mission to restore the Globe Theatre. <em>Tottenham Boys</em> is a suspense thriller set during the 2011 London riots, endorsed by Hanif Kureishi. <em>Halfpenny</em>, a Regency suspense novel, is nearing completion.</p>
 				<p class="reveal reveal-delay-2">Based in Ivinghoe, Buckinghamshire, John also works as a sports injury therapist. Explore his books below, read the full <a href="about.html">author biography</a>, or get in touch via the <a href="contact.html">contact page</a>.</p>
+			</div>
+		</section>
+
+		<section id="news-section" hidden>
+			<div class="wrap">
+				<div class="section-head center reveal">
+					<p class="section-label">News</p>
+					<h2>Latest updates</h2>
+				</div>
+				<div class="news-list" id="news-list"></div>
 			</div>
 		</section>
 
@@ -124,12 +140,12 @@
 						<img src="images/john-kinski-theatrecy.jpg" alt="John Kinski holding Theatrecy" width="320" height="427">
 					</div>
 					<div>
-						<span class="featured-badge">Latest release · June 2026</span>
-						<h2><em>Theatrecy</em></h2>
-						<p>A hilarious black comedy set during the English Civil War. Gideon, a would-be actor, travels between Parliamentarian London and Royalist Oxford on a desperate mission to restore the Globe Theatre — through romance, espionage, murder, and dark humour.</p>
+						<span class="featured-badge" id="featured-badge">Latest release · June 2026</span>
+						<h2><em id="featured-title">Theatrecy</em></h2>
+						<p id="featured-description">A hilarious black comedy set during the English Civil War. Gideon, a would-be actor, travels between Parliamentarian London and Royalist Oxford on a desperate mission to restore the Globe Theatre — through romance, espionage, murder, and dark humour.</p>
 						<div class="hero-actions">
-							<a href="theatrecy.html" class="btn btn-primary">About <em>Theatrecy</em></a>
-							<a href="https://troubador.co.uk/bookshop/historical/theatrecy" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Buy now</a>
+							<a href="theatrecy.html" class="btn btn-primary" id="featured-btn-primary">About <em>Theatrecy</em></a>
+							<a href="https://troubador.co.uk/bookshop/historical/theatrecy" class="btn btn-secondary" id="featured-btn-secondary" target="_blank" rel="noopener noreferrer">Buy now</a>
 						</div>
 					</div>
 				</div>
@@ -236,6 +252,6 @@
 	</footer>
 
 	<script src="js/main.js"></script>
-	<script src="js/homepage.js"></script>
+	<script src="js/site-content.js"></script>
 </body>
 </html>
