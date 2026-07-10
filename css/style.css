@@ -626,16 +626,16 @@ section.alt {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--bg-warm);
+	background: var(--white);
 	border: 1px solid var(--border);
 	min-height: 184px;
+	padding: 0.75rem;
 }
 
-.book-card.coming-soon .book-card-cover span {
-	font-family: var(--font-display);
-	font-size: 1.25rem;
-	font-style: italic;
-	color: var(--soft);
+.book-card.coming-soon .book-card-cover .halfpenny-coin {
+	width: 130px;
+	height: 130px;
+	object-fit: contain;
 }
 
 .coming-soon-cover {
@@ -653,6 +653,26 @@ section.alt {
 	color: var(--soft);
 	text-align: center;
 	padding: 1rem;
+}
+
+.coming-soon-cover--coin {
+	background: var(--white);
+	min-height: auto;
+	padding: 1.25rem;
+}
+
+.coming-soon-cover--coin .halfpenny-coin {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+	object-fit: contain;
+}
+
+.featured-cover-wrap .halfpenny-coin {
+	width: 220px;
+	height: auto;
+	object-fit: contain;
+	display: block;
 }
 
 .detail-grid {
